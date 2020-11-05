@@ -1,0 +1,11 @@
+.img_container{
+  width: 850px;
+
+}
+img{
+  width: 200px;
+  border: 1px solid gray;
+  height: 200px;
+}
+#timer{
+}
