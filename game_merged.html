@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>buyna game</title>
+	<style> 
+		td{
+	border: 2px solid gray;
+	background-color: peachpuff;
+}
+img{
+	width: 100px;
+	height: 100px;
+}
+table{
+	margin-left: auto;
+	margin-right: auto;
+}
+.timer{
+	text-align: center;
+}
+	</style>
+</head>
+<body>
+	<h1 style="text-align:center"> buynaa's game (2, 2 оор ээлжэн сонгоно уу.) </h1>
+	<h2 style="text-align: center" id="timer"> time: </h2>
+	<h3 style="text-align: center"  id="score"> Score: </h3>
+	<table>
+		<tr>
+			<td><img src="qmark.png" id="img0" onclick="check(this, 0)"></td>
+			<td><img src="qmark.png" id="img1" onclick="check(this, 1)"></td>
+			<td><img src="qmark.png" id="img2" onclick="check(this, 2)"></td>
+			<td><img src="qmark.png" id="img3" onclick="check(this, 3)"></td>
+		<tr>
+			<td><img src="qmark.png" id="img4" onclick="check(this, 4)"></td>
+			<td><img src="qmark.png" id="img5" onclick="check(this, 5)"></td>
+			<td><img src="qmark.png" id="img6" onclick="check(this, 6)"></td>
+			<td><img src="qmark.png" id="img7" onclick="check(this, 7)"></td>
+		<tr>
+			<td><img src="qmark.png" id="img8" onclick="check(this, 8)"></td>
+			<td><img src="qmark.png" id="img9" onclick="check(this, 9)"></td>
+			<td><img src="qmark.png" id="img10" onclick="check(this, 10)"></td>
+			<td><img src="qmark.png" id="img11" onclick="check(this, 11)"></td>
+		<tr>
+			<td><img src="qmark.png" id="img12" onclick="check(this, 12)"></td>
+			<td><img src="qmark.png" id="img13" onclick="check(this, 13)"></td>
+			<td><img src="qmark.png" id="img14" onclick="check(this, 14)"></td>
+			<td><img src="qmark.png" id="img15" onclick="check(this, 15)"></td>
+		<tr>
+	<table>		
+		<script>
+			images = ["https://static.wikia.nocookie.net/dota2_gamepedia/images/c/cc/Abaddon_minimap_icon.png/revision/latest/scale-to-width-down/32?cb=20130710224841", "https://static.wikia.nocookie.net/dota2_gamepedia/images/c/cc/Abaddon_minimap_icon.png/revision/latest/scale-to-width-down/32?cb=20130710224841", "https://static.wikia.nocookie.net/dota2_gamepedia/images/4/44/Lina_minimap_icon.png/revision/latest/scale-to-width-down/32?cb=20120725223234", "https://static.wikia.nocookie.net/dota2_gamepedia/images/4/44/Lina_minimap_icon.png/revision/latest/scale-to-width-down/32?cb=20120725223234", "https://static.wikia.nocookie.net/dota2_gamepedia/images/0/00/Shadow_Fiend_minimap_icon.png/revision/latest/scale-to-width-down/32?cb=20140924021543", "https://static.wikia.nocookie.net/dota2_gamepedia/images/0/00/Shadow_Fiend_minimap_icon.png/revision/latest/scale-to-width-down/32?cb=20140924021543", "https://static.wikia.nocookie.net/dota2_gamepedia/images/8/86/Io_minimap_icon.png/revision/latest/scale-to-width-down/32?cb=20130329190258", "https://static.wikia.nocookie.net/dota2_gamepedia/images/8/86/Io_minimap_icon.png/revision/latest/scale-to-width-down/32?cb=20130329190258", "https://static.wikia.nocookie.net/dota2_gamepedia/images/b/b2/Juggernaut_minimap_icon.png/revision/latest/scale-to-width-down/32?cb=20120717000940", "https://static.wikia.nocookie.net/dota2_gamepedia/images/b/b2/Juggernaut_minimap_icon.png/revision/latest/scale-to-width-down/32?cb=20120717000940", "https://static.wikia.nocookie.net/dota2_gamepedia/images/0/02/Void_Spirit_minimap_icon.png/revision/latest/scale-to-width-down/32?cb=20191126183154", "https://static.wikia.nocookie.net/dota2_gamepedia/images/0/02/Void_Spirit_minimap_icon.png/revision/latest/scale-to-width-down/32?cb=20191126183154", "https://static.wikia.nocookie.net/dota2_gamepedia/images/6/63/Drow_Ranger_minimap_icon.png/revision/latest/scale-to-width-down/32?cb=20120717000933", "https://static.wikia.nocookie.net/dota2_gamepedia/images/6/63/Drow_Ranger_minimap_icon.png/revision/latest/scale-to-width-down/32?cb=20120717000933", "https://static.wikia.nocookie.net/dota2_gamepedia/images/e/e9/Arc_Warden_minimap_icon.png/revision/latest/scale-to-width-down/32?cb=20151216031843", "https://static.wikia.nocookie.net/dota2_gamepedia/images/e/e9/Arc_Warden_minimap_icon.png/revision/latest/scale-to-width-down/32?cb=20151216031843"];
+flip_count = 0;
+score = 0;
+
+var k = prompt("Enter your name to play:")
+alert("Rule: 2 durs songood, 2laa butsaad ariltal huleene.")
+
+
+
+function random_array(arr){
+	for(i=0; i<arr.length; i++){
+		rand=Math.floor(Math.random()*16);
+		temp=arr[i];
+		arr[i] = arr[rand];
+		arr[rand] = temp;
+
+	}
+	
+}
+random_array(images);
+console.log(images);
+
+
+function check(img, index){
+	if(flip_count==0){
+	img.setAttribute("src", images[index]);
+	flip_count++;
+	daralt = index;
+	}
+	else{
+	img.setAttribute("src", images[index]);
+	flip_count = 0;
+	setTimeout(function(){
+		if(images[daralt]==images[index]){
+		img.style.visibility = "hidden";
+		document.getElementById("img" + daralt).style.visibility = "hidden";
+		score++;
+		document.getElementById("score").innerHTML = "score:"+score;
+	    if(score==8){
+	    alert("Winner!")
+	    clearInterval(gameOver);
+	}
+	}
+	else{
+		img.setAttribute("src", 'qmark.png');
+		document.getElementById("img" + daralt).setAttribute("src", 'qmark.png');
+	}
+    }, 500);
+	}
+}
+
+time = 1;
+duration = time*60;
+
+function updateElem(){
+	minutes = Math.floor(duration/60);
+	seconds = duration % 60;
+	seconds = seconds < 10 ? "0"+seconds:seconds;
+	document.getElementById("timer").innerHTML = minutes+":"+seconds;
+	duration--;
+	if(duration<0){
+		clearInterval(gameOver);
+		prompt(k, score)
+}
+}
+
+var gameOver = setInterval(updateElem, 1000)
+		</script>
+
+</body>
+</html>
